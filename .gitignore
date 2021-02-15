@@ -11,5 +11,8 @@ CTestTestfile.cmake
 _deps
 
 
-#For Mac
+# For Mac
 .DS_Store
+
+# For Clion Configuration
+.idea/
