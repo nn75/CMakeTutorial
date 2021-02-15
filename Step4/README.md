@@ -9,4 +9,11 @@ cmake ..
 cmake --build .
 cmake --install . --prefix "../installdir"
 ```
-
+3. To run test
+```
+cd Step4_build
+cmake ..
+cmake -VV
+or cmake -N
+or cmake -C Debug -VV 
+```
