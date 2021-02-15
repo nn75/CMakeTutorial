@@ -16,3 +16,4 @@ _deps
 
 # For Clion Configuration
 .idea/
+cmake-build-debug/
