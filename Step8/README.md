@@ -1,9 +1,15 @@
-# Step7
-## Building an Installer
+# Step8
+## Adding Support for a Dashboard
 
-1. InstallRequiredSystemLibraries 这个模块将包括当前平台项目所需要的任何运行时库
+1. The ctest executable will read in the CTestConfig.cmake file when it runs.
 
-2. Use  the following command to check the content
+2. Use  the following command to run test:
 ```
-tar -tf Tutorial-1.0-Darwin.zip
+cd Step8_build
+cmake ..
+ctest [-VV] -D Experimental
+```
+3. To check results:
+```
+https://my.cdash.org/index.php?project=CMakeTutorial
 ```
