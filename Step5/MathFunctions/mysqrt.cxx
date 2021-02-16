@@ -2,7 +2,6 @@
 #include <iostream>
 
 #include "MathFunctions.h"
-#include "TutorialConfig.h"
 
 double mysqrt(double x) {
     if (x <= 0) {

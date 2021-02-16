@@ -5,10 +5,8 @@ message(STATUS "CMAKE_CURRENT_SOURCE_DIR====${CMAKE_CURRENT_SOURCE_DIR}")
 
 # 1. state that anybody linking to us needs to include the current source dir
 # to find MathFunctions.h, while we don't
-# 2. Add CMAKE_BINARY_DIR to help mysqrt.cxx find the TutorialConfig.h
 target_include_directories(MathFunctions
         INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
-        PRIVATE ${CMAKE_BINARY_DIR}
         )
 
 # does this system provide the log and exp functions?
