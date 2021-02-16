@@ -1,4 +1,9 @@
-# Step6
-## Adding a Custom Command and Generated File
+# Step7
+## Building an Installer
 
-1. When this project is built it will first build the MakeTable executable. It will then run MakeTable to produce Table.h. Finally, it will compile mysqrt.cxx which includes Table.h to produce the MathFunctions library.
+1. InstallRequiredSystemLibraries 这个模块将包括当前平台项目所需要的任何运行时库
+
+2. Use  the following command to check the content
+```
+tar -tf Tutorial-1.0-Darwin.zip
+```
