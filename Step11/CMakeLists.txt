@@ -7,6 +7,7 @@ project(Tutorial VERSION 1.0)
 message(STATUS "PROJECT_BINARY_DIR====${PROJECT_BINARY_DIR}")
 message(STATUS "PROJECT_SOURCE_DIR====${PROJECT_SOURCE_DIR}")
 message(STATUS "PROJECT_BINARY_DIR====${PROJECT_BINARY_DIR}")
+message(STATUS "CMAKE_CURRENT_LIST_DIR====${CMAKE_CURRENT_LIST_DIR}")
 
 # specify the c++ standard
 #set(CMAKE_CXX_STANDARD 11)
@@ -92,3 +93,37 @@ set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
 set(CPACK_PACKAGING_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
 set(CPACK_PACKAGING_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
 include(CPack)
+
+# install the configuration targets
+install(EXPORT MathFunctionsTargets
+        FILE MathFunctionsTarget.cmake
+        DESTINATION lib/cmake/MathFunctions)
+
+
+install(EXPORT MathFunctionsTargets
+        FILE MathFunctionsTargets.cmake
+        DESTINATION lib/cmake/MathFunctions
+        )
+
+include(CMakePackageConfigHelpers)
+# generate the config file that is includes the exports
+configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/Config.cmake.in
+        "${CMAKE_CURRENT_BINARY_DIR}/MathFunctionsConfig.cmake"
+        INSTALL_DESTINATION "lib/cmake/example"
+        NO_SET_AND_CHECK_MACRO
+        NO_CHECK_REQUIRED_COMPONENTS_MACRO
+        )
+# generate the version file for the config file
+write_basic_package_version_file(
+        "${CMAKE_CURRENT_BINARY_DIR}/MathFunctionsConfigVersion.cmake"
+        VERSION "${Tutorial_VERSION_MAJOR}.${Tutorial_VERSION_MINOR}"
+        COMPATIBILITY AnyNewerVersion
+)
+
+# install the configuration file
+install(FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/MathFunctionsConfig.cmake
+        DESTINATION lib/cmake/MathFunctions
+        )
+
+
