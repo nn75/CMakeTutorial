@@ -3,6 +3,11 @@ cmake_minimum_required(VERSION 3.10)
 # set the project name
 project(Tutorial VERSION 1.0)
 
+# print all path we use
+message(STATUS "PROJECT_BINARY_DIR====${PROJECT_BINARY_DIR}")
+message(STATUS "PROJECT_SOURCE_DIR====${PROJECT_SOURCE_DIR}")
+message(STATUS "PROJECT_BINARY_DIR====${PROJECT_BINARY_DIR}")
+
 # specify the c++ standard
 #set(CMAKE_CXX_STANDARD 11)
 #set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -20,10 +25,7 @@ target_compile_options(tutorial_compiler_flags INTERFACE
         "$<${msvc_cxx}:$<BUILD_INTERFACE:-W3>>"
         )
 
-# print all path we use
-message(STATUS "PROJECT_BINARY_DIR====${PROJECT_BINARY_DIR}")
-message(STATUS "PROJECT_SOURCE_DIR====${PROJECT_SOURCE_DIR}")
-message(STATUS "PROJECT_BINARY_DIR====${PROJECT_BINARY_DIR}")
+message(STATUS "tutorial_compiler_flags====${tutorial_compiler_flags}")
 
 # control where the static and shared libraries are built so that on windows
 # we don't need to tinker with the path to run the executable

@@ -49,7 +49,7 @@ endif()
 target_compile_definitions(MathFunctions PRIVATE "EXPROTING_MYMATH")
 
 # install rules
-set(installable_libs MathFunctions)
+set(installable_libs MathFunctions tutorial_compiler_flags)
 if(TARGET SqrtLibrary)
     list(APPEND installable_libs SqrtLibrary)
 endif()
