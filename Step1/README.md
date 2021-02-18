@@ -1,4 +1,4 @@
-# Step1. A Basic Starting Point
+# Step1 A Basic Starting Point
 
 #### 1. Simple Run：
 ```
