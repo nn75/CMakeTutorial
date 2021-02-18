@@ -8,4 +8,5 @@ cmake --build .
 ```
 
 ### 2. Key Points
-- We can use -D to change option, for example `-DUSE_MYMATH=OFF` can close the use of macro USE_MYMATH
+- We can use `-D` to change option, for example `-DUSE_MYMATH=OFF` can close `USE_MYMATH`
+- `option(USE_MYMATH "Use tutorial provided math implementation" ON)` This option will be displayed in the cmake-gui and ccmake with a default value of ON that can be changed by the user. You can run `ccmake ..` to check the value.
