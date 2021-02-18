@@ -8,4 +8,4 @@ cmake --build .
 ```
 
 ### 2. Key Points
-- We can use -D to change option, for example -DUSE_MYMATH=OFF can close the use of macro USE_MYMATH
+- We can use -D to change option, for example `-DUSE_MYMATH=OFF` can close the use of macro USE_MYMATH
